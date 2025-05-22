@@ -7,7 +7,7 @@ export default function Navbar() {
 
   return (
     <nav className="w-full bg-[#0a192f] px-10 py-4 flex justify-between items-center shadow-md">
-      <div className="text-white text-2xl font-bold">Your Name</div>
+      <div className="text-white text-2xl font-bold">DARSHAN  MALVIYA</div>
       <ul className="flex space-x-8">
         {navItems.map((item) => (
           <li
