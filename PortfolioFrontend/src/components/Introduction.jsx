@@ -1,5 +1,5 @@
 import React from "react";
-import myImage from "/profile pic.jpg";
+import myImage from "./../assets/profile.jpg";
 import ProfileSkills from "../Elements/ProfileSkills";
 export default function IntroductionSection() {
   return (

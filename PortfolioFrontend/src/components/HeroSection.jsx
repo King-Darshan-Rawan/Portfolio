@@ -1,6 +1,6 @@
 import { Typewriter } from 'react-simple-typewriter';
 import { FaGithub, FaLinkedin, FaFacebook, FaInstagram } from 'react-icons/fa';
-import hatakeImg from '../assets/hatake.jpg';
+import hatakeImg from '../assets/photo_2025-05-22_20-56-22.jpg';
 export default function HeroSection() {
     const hckImage = `url(${hatakeImg})`;
   return (
@@ -27,10 +27,10 @@ export default function HeroSection() {
         </h2>
 
         <div className="flex space-x-6 mt-6 text-2xl">
-          <a href="https://github.com" target="_blank" rel="noreferrer"><FaGithub /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-          <a href="https://facebook.com" target="_blank" rel="noreferrer"><FaFacebook /></a>
-          <a href="https://instagram.com" target="_blank" rel="noreferrer"><FaInstagram /></a>
+          <a href="https://github.com/King-Darshan-Rawan" target="_blank" rel="noreferrer"><FaGithub /></a>
+          <a href="https://www.linkedin.com/in/darshan-malviya-431864258" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+          <a href="https://www.facebook.com/share/1EYAyCeayW/" target="_blank" rel="noreferrer"><FaFacebook /></a>
+          <a href="https://www.instagram.com/the_king_darshan_chauhan" target="_blank" rel="noreferrer"><FaInstagram /></a>
         </div>
       </div>
     </div>
