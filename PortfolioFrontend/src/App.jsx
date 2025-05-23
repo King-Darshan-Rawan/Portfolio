@@ -32,7 +32,9 @@ export default function App() {
         <section id="ABOUT">
           <IntroductionSection />
         </section>
-
+        <section id="HIREME">
+          <HireMeSection />
+        </section>
         <section id="EXPERIENCE">
           <ExperienceTimeline />
         </section>

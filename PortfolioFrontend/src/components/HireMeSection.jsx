@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import bgImage from "../assets/scroller.jpg";
+import bgImage from "../assets/photo_2025-05-22_20-51-23.jpg";
 
 export default function HireMeSection() {
   const bgRef = useRef(null);
