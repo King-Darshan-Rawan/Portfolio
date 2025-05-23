@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoClose } from "react-icons/io5";
 
 const navItems = ["HOME", "ABOUT", "EXPERIENCE", "EDUCATION", "CONTACT"];
 
 export default function Navbar() {
   const [active, setActive] = useState("HOME");
   const [isAtTop, setIsAtTop] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleClick = (item) => {
     const element = document.getElementById(item);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+    setMenuOpen(false); // Close mobile menu after click
   };
 
   useEffect(() => {
@@ -18,7 +22,7 @@ export default function Navbar() {
       const scrollY = window.scrollY;
       setIsAtTop(scrollY < 10);
 
-      let current = "HOME"; // fallback
+      let current = "HOME";
       for (const id of navItems) {
         const el = document.getElementById(id);
         if (el) {
@@ -39,14 +43,16 @@ export default function Navbar() {
   if (isAtTop) return null;
 
   return (
-    <nav className="w-full bg-[#0a192f] px-10 py-4 flex justify-between items-center shadow-md sticky top-0 z-50">
-      <div className="text-[#FFD700] text-2xl font-bold">DARSHAN MALVIYA</div>
-      <ul className="flex space-x-8">
+    <nav className="w-full bg-[#0a192f] px-6 py-4 flex justify-between items-center shadow-md sticky top-0 z-50">
+      <div className="text-[#FFD700] text-xl sm:text-2xl font-bold">DARSHAN MALVIYA</div>
+
+      {/* Desktop Menu */}
+      <ul className="hidden md:flex space-x-6">
         {navItems.map((item) => (
           <li
             key={item}
             onClick={() => handleClick(item)}
-            className={`relative cursor-pointer text-white transition duration-300`}
+            className="relative cursor-pointer text-white"
           >
             {item}
             <span
@@ -57,6 +63,26 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      {/* Hamburger Icon */}
+      <div className="md:hidden text-white text-2xl" onClick={() => setMenuOpen(!menuOpen)}>
+        {menuOpen ? <IoClose /> : <GiHamburgerMenu />}
+      </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <ul className="absolute top-full left-0 w-full bg-[#0a192f] flex flex-col items-center py-4 space-y-4 md:hidden transition-all duration-300">
+          {navItems.map((item) => (
+            <li
+              key={item}
+              onClick={() => handleClick(item)}
+              className="text-white text-lg"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
+      )}
     </nav>
   );
 }
