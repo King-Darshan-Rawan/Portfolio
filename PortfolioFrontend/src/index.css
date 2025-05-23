@@ -1,1 +1,41 @@
 @import "tailwindcss";
+/* In your index.css or global CSS */
+body {
+  cursor: none;
+}
+.fire-cursor-img {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+}
+
+.fire-spark {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffcc00, #ff3300, #990000);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(1);
+  animation: fire-flicker 0.5s ease-out forwards;
+  opacity: 0.9;
+}
+
+@keyframes fire-flicker {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate(-50%, -60%) scale(2);
+    opacity: 0;
+    filter: blur(3px);
+  }
+}
+.fire-spark:nth-child(1) {
+  animation-delay: 0s;
+}

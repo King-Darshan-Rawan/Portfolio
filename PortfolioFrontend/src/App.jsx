@@ -1,5 +1,6 @@
-import React from "react";
-import { BrowserRouter as Router } from "react-router-dom"; // Only Router is needed
+import React, { useEffect, useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import SparkCursor from "./components/SparkCursor";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/HeroSection";
 import IntroductionSection from "./components/Introduction";
@@ -11,12 +12,19 @@ import Footer from "./components/Footer";
 import "./App.css";
 
 export default function App() {
+  
+
   return (
     <Router>
+  
+
+      {/* Spark effect on click */}
+      <SparkCursor />
+
+      {/* Main App */}
       <div className="App">
         <Navbar />
 
-        {/* Wrap each section in a div with an id */}
         <section id="HOME">
           <HeroSection />
         </section>
